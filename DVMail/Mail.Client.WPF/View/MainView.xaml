@@ -20,11 +20,6 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        <CollectionViewSource x:Key="SentMailSource" Source="{Binding SentMail}">
-            <CollectionViewSource.SortDescriptions>
-                <scm:SortDescription PropertyName="Date" Direction="Descending"/>
-            </CollectionViewSource.SortDescriptions>
-        </CollectionViewSource>
     </Window.Resources>
     <Grid>
         <Button Command="{Binding ComposeLetterCommand}" Content="Написать" HorizontalAlignment="Right" Margin="0,26,32,0" VerticalAlignment="Top" Width="75"/>
@@ -52,7 +47,7 @@
                 </DataGrid>
             </TabItem>
             <TabItem Header="Исходящие">
-                <DataGrid ItemsSource="{Binding}" DataContext="{StaticResource SentMailSource}" AutoGenerateColumns="False" CanUserResizeRows="False" HeadersVisibility="Column" IsReadOnly="True" SelectionMode="Single" SelectedItem="{Binding SelectedSentMailLetter}">
+                <DataGrid ItemsSource="{Binding SentMail}" AutoGenerateColumns="False" CanUserResizeRows="False" HeadersVisibility="Column" IsReadOnly="True" SelectionMode="Single" SelectedItem="{Binding SelectedSentMailLetter}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseLeftButtonDown">
                             <i:InvokeCommandAction Command="{Binding DeselectSentMailLettersCommand}"/>

@@ -195,13 +195,13 @@ namespace Mail.Client.WPF.ViewModel
         }
         public async void UpdateInbox()
         {
-            var letters = (await _serviceClient.GetUsersInbox(_currentUser.Id)).ToList();
+            var letters = (await _serviceClient.GetUsersInbox(_currentUser.Id));
             Inbox = new ObservableCollection<Letter>(letters);
         }
 
         public async void UpdateSentMail()
         {
-            var letters = await _serviceClient.GetUsersSentMail(_currentUser.Id);
+            var letters = (await _serviceClient.GetUsersSentMail(_currentUser.Id)).OrderByDescending(x => x.Date);
             SentMail = new ObservableCollection<Letter>(letters);
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Mail.DataLayer;
 using Mail.DataLayer.SQL;
 using Mail.Model;
 
@@ -17,7 +18,7 @@ namespace Mail.API.Controllers
     {
         private const string ConnectionString = 
             @"Data Source=JACKSONFALLERPC\SQLEXPRESS;Initial Catalog=MailDB;Integrated Security=True";
-        private readonly UsersRepository _usersRepository = new UsersRepository(ConnectionString);
+        private readonly IUsersRepository _usersRepository = new UsersRepository(ConnectionString);
 
         /// <summary>
         /// Create a new user
