@@ -1,0 +1,9 @@
+﻿<Application x:Class="Mail.Client.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Mail.Client.WPF"
+             StartupUri="View/StartView.xaml">
+    <Application.Resources>
+        <local:EnumerableToStringConverter x:Key="EnumerableToStringConverter" />
+    </Application.Resources>
+</Application>

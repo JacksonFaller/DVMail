@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Model", "Mail.Model\Mail.Model.csproj", "{C163AC68-4148-4292-A4EB-5B1729FF0C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.DataLayer", "Mail.DataLayer\Mail.DataLayer.csproj", "{1D9E6CC0-74AC-4D0E-9548-B2528AE49DEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.DataLayer.SQL", "Mail.DataLayer.SQL\Mail.DataLayer.SQL.csproj", "{C6EFC32B-E0F2-4925-9ECB-B8A78D7C30B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.DataLayer.SQL.Tests", "Mail.DataLayer.SQL.Tests\Mail.DataLayer.SQL.Tests.csproj", "{6406C624-A556-4951-BA36-7990D1D86FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.API", "Mail.API\Mail.API.csproj", "{A88916BD-4E18-476E-85EF-B345F51638F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Client.WPF", "Mail.Client.WPF\Mail.Client.WPF.csproj", "{3AFC3636-8971-41D9-963C-B7DDE34A2E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Logger", "Mail.Logger\Mail.Logger.csproj", "{B45BD65F-EBDB-4B48-9C2D-393D78722B2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C163AC68-4148-4292-A4EB-5B1729FF0C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C163AC68-4148-4292-A4EB-5B1729FF0C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C163AC68-4148-4292-A4EB-5B1729FF0C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C163AC68-4148-4292-A4EB-5B1729FF0C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9E6CC0-74AC-4D0E-9548-B2528AE49DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9E6CC0-74AC-4D0E-9548-B2528AE49DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9E6CC0-74AC-4D0E-9548-B2528AE49DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9E6CC0-74AC-4D0E-9548-B2528AE49DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6EFC32B-E0F2-4925-9ECB-B8A78D7C30B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6EFC32B-E0F2-4925-9ECB-B8A78D7C30B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6EFC32B-E0F2-4925-9ECB-B8A78D7C30B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6EFC32B-E0F2-4925-9ECB-B8A78D7C30B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6406C624-A556-4951-BA36-7990D1D86FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6406C624-A556-4951-BA36-7990D1D86FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6406C624-A556-4951-BA36-7990D1D86FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6406C624-A556-4951-BA36-7990D1D86FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88916BD-4E18-476E-85EF-B345F51638F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88916BD-4E18-476E-85EF-B345F51638F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88916BD-4E18-476E-85EF-B345F51638F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88916BD-4E18-476E-85EF-B345F51638F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AFC3636-8971-41D9-963C-B7DDE34A2E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFC3636-8971-41D9-963C-B7DDE34A2E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFC3636-8971-41D9-963C-B7DDE34A2E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFC3636-8971-41D9-963C-B7DDE34A2E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45BD65F-EBDB-4B48-9C2D-393D78722B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45BD65F-EBDB-4B48-9C2D-393D78722B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45BD65F-EBDB-4B48-9C2D-393D78722B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45BD65F-EBDB-4B48-9C2D-393D78722B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

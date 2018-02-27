@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mail.Client.WPF.View"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Mail.Client.WPF.View.InboxLetterView"
+        mc:Ignorable="d"
+        Title="Просмотр письма" Height="330" Width="450">
+    <Grid>
+
+        <TextBox Text="{Binding Letter.Subject, Mode=OneWay}" Height="23" Margin="100,44,20,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+        <xctk:RichTextBox  Text="{Binding Letter.Text}" Margin="20,78,20,46" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True">
+            <xctk:RichTextBox.TextFormatter>
+                <xctk:RtfFormatter/>
+            </xctk:RichTextBox.TextFormatter>
+        </xctk:RichTextBox>
+        <Label Content="Тема" HorizontalAlignment="Left" Margin="20,41,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
+        <Button Content="Закрыть" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="75" IsCancel="True"/>
+        <TextBox Text="{Binding Letter.AddresserName, Mode=OneWay}" Height="23" Margin="100,16,20,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+        <Label Content="Отправитель" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
+
+    </Grid>
+</Window>

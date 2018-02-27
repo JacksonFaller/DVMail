@@ -1,0 +1,27 @@
+﻿<Window x:Class="Mail.Client.WPF.View.ComposeLetterView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Mail.Client.WPF"
+        mc:Ignorable="d"
+        x:Name="ComposeLetterWindow"
+        Title="Новое письмо" Height="330" Width="450">
+    <Grid>
+        <Label Content="Кому" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
+        <TextBox Text="{Binding Subject, Mode=TwoWay}" Height="23" Margin="57,70,20,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <toolkit:RichTextBox  Text="{Binding Body}" Margin="20,98,20,45" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <toolkit:RichTextBox.TextFormatter>
+                <toolkit:RtfFormatter/>
+            </toolkit:RichTextBox.TextFormatter>
+        </toolkit:RichTextBox>
+        <Label Content="Тема" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
+        <TextBox Text="{Binding AddresseeText, Mode=TwoWay}" Margin="58,16,110,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Command="{Binding SendLetterCommand}" CommandParameter= "{Binding ElementName=ComposeLetterWindow}" Content="Отправить" HorizontalAlignment="Left" Margin="57,0,0,10" VerticalAlignment="Bottom" Width="75" IsDefault="True"/>
+        <Button Content="Отмена" HorizontalAlignment="Right" Margin="0,0,56,10" VerticalAlignment="Bottom" Width="75" IsCancel="True"/>
+        <Button Command="{Binding AddAddresseeCommand}" Content="Добавить" HorizontalAlignment="Right" Margin="0,16,20,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox ItemsSource="{Binding Addressee, Mode=OneWay}" x:Name="AddresseeList" Margin="58,44,110,0" VerticalAlignment="Top" SelectedIndex="0"/>
+        <Button Command="{Binding DeleteAddresseeCommand}" CommandParameter="{Binding ElementName=AddresseeList}" Content="Удалить" HorizontalAlignment="Right" Margin="0,44,20,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>
