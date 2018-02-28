@@ -66,6 +66,12 @@ namespace Mail.Client.WPF.ViewModel
 
         private bool _isLocked;
 
+        public bool IsLocked
+        {
+            get { return _isLocked; }
+            set { _isLocked = value; OnPropertyChanged(nameof(IsLocked)); }
+        }
+
         public ICommand SignInCommand
         {
             get
@@ -74,8 +80,8 @@ namespace Mail.Client.WPF.ViewModel
                 {
                     try
                     {
-                        if (_isLocked) return;
-                        _isLocked = true;
+                        if (IsLocked) return;
+                        IsLocked = true;
                         string password = GetPassword(o);
                         if (!IsInputDataValid(_name, password)) return;
                         CurrentUser = await _serviceClient.ValidateUser(new User(_name, password));
@@ -88,7 +94,7 @@ namespace Mail.Client.WPF.ViewModel
                     }
                     finally
                     {
-                        _isLocked = false;
+                        IsLocked = false;
                     }
                 });
             }
@@ -102,8 +108,8 @@ namespace Mail.Client.WPF.ViewModel
                 {
                     try
                     {
-                        if (_isLocked) return;
-                        _isLocked = true;
+                        if (IsLocked) return;
+                        IsLocked = true;
                         string password = GetPassword(o);
                         if (!IsInputDataValid(_name, password)) return;
                         CurrentUser = await _serviceClient.CreateUser(new User(_name, password));
@@ -116,7 +122,7 @@ namespace Mail.Client.WPF.ViewModel
                     }
                     finally
                     {
-                        _isLocked = false;
+                        IsLocked = false;
                     }
                 });
             }

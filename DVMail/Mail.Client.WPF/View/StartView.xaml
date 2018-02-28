@@ -13,10 +13,38 @@
     </Window.DataContext>-->
     <Grid>
         <TextBox Text="{Binding Name, Mode= TwoWay}" x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="145,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="1"/>
-        <Button Command ="{Binding SignUpCommand}" CommandParameter="{Binding ElementName=StartWindow}" Content="Регистрация" HorizontalAlignment="Left" Margin="40,0,0,25" VerticalAlignment="Bottom" Width="75" TabIndex="4"/>
+        <Button Command ="{Binding SignUpCommand}" CommandParameter="{Binding ElementName=StartWindow}" Content="Регистрация" HorizontalAlignment="Left" Margin="40,0,0,25" VerticalAlignment="Bottom" Width="75" TabIndex="4">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLocked}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsLocked}" Value="False">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top" Width="115"/>
         <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="23" Margin="145,66,0,0" VerticalAlignment="Top" Width="120" TabIndex="2"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="15,63,0,0" VerticalAlignment="Top" Width="115"/>
-        <Button Command="{Binding SignInCommand}" CommandParameter="{Binding ElementName=PasswordBox}" Content="Войти" HorizontalAlignment="Right" Margin="0,0,50,25" VerticalAlignment="Bottom" Width="75" TabIndex="3"/>
+        <Button Command="{Binding SignInCommand}" CommandParameter="{Binding ElementName=PasswordBox}" Content="Войти" HorizontalAlignment="Right" Margin="0,0,50,25" VerticalAlignment="Bottom" Width="75" TabIndex="3">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="True" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsLocked}" Value="True">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsLocked}" Value="False">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>
